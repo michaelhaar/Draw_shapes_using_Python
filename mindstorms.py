@@ -6,6 +6,10 @@ def draw_shapes():
     draw_square()
     draw_circle()
     draw_triangle()
+
+    window.clear()
+    window.bgcolor('blue')
+    draw_flower()
     window.exitonclick()
 
 
@@ -36,4 +40,28 @@ def draw_triangle():
     for i in range(3):
         mike.backward(200)
         mike.left(120)
+
+
+def draw_flower():
+    sue = turtle.Turtle()
+    sue.speed(100)
+
+    #draw the stem
+    sue.width(5)
+    sue.color('green')
+    sue.left(90)
+    sue.forward(300)
+
+    #draw the flower
+    sue.width(1)
+    sue.color('yellow')
+    delta_phi = 5
+    for i in range(int(360/delta_phi)):
+        sue.forward(100)
+        sue.backward(100)
+        sue.right(delta_phi)
+
+
+draw_shapes()
+
 
